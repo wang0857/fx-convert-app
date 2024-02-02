@@ -1,33 +1,44 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## Built with
 
-First, run the development server:
+- [Next.js](https://nextjs.org/) - React Framework
+- [React](https://reactjs.org/) - JS library
+- [React Redux](https://react-redux.js.org/) - Official React bindings
+- [Tailwind CSS](https://tailwindcss.com/) - CSS library
+- [Sass](https://sass-lang.com/) - CSS pre-processor
+- [HeroIcons](https://heroicons.com/) - Icons made by Tailwind CSS
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Screenshots
+![Foreign Exchange in desktop device](./public/screenshots/fx-convert-desktop.png)
+![Foreign Exchange in mobile device](./public/screenshots/fx-convert-mobile.png)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## What I've learned
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Flexible React components 
+- Created reusable components such as input and panel components.
+- Customized auto-completed components.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Sass/SCSS
+- Generated dynamic 'Tailwind CSS-like' classes using Sass `@each...in...` loop function.
+- Stored basic button styles in mixins and implemented different colors using parameters when including the mixins.
 
-## Learn More
+### React Redux and Redux toolkits in Next.js
+- Implemented state management with React Redux and Redux Toolkit in Next.js.
 
-To learn more about Next.js, take a look at the following resources:
+### Fecth APIs in React Redux
+- Utilized `createAsyncThunk` to fetch APIs in React Redux.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## How to Use
+1. Search for the original currency you would like to convert from. You can either expand the panel to check all currencies or type the currency directly and choose the matching result in the popup panel.
+2. Search for the final currency you would like to convert to. You can either expand the panel to check all currencies or type the currency directly and choose the matching result in the popup panel.
+3. Input the amount that you want to convert.
+4. Click the convert button and check the result.
+5. If you want to exchange the currencies between the selections, please click on the two-way arrow in the middle of the convert input fields.
+6. Change the amount if you wish and click the 'Convert' button. You will get the result on the right-hand input field.
+7. If you want to reset the amount, please click the 'Reset' button. It will reset all input fields.
+
 
 ## Deploy on Vercel
 

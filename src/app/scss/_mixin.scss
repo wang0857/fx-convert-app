@@ -1,0 +1,70 @@
+@mixin button($backgroundColor, $hoverBackgroundColor, $hoverColor, $focusBorderColor) {
+  &::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    border-radius: 9999px;
+    background: $backgroundColor;
+    z-index: -1;
+  }  
+  
+  &:hover {
+    background: $hoverBackgroundColor;
+    color: $hoverColor;
+
+    &::before {
+      content: "";
+      background: none;
+    }
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: 2px solid $focusBorderColor;
+    outline-offset: 4px;
+  }
+}
+
+// @Hack: Use #{} for inserting variables in a string class.
+@mixin flex-gap($value) {
+    .flex-gap-\[#{$value}\]{
+       gap: $value;
+    }
+}
+
+// Scroll bars
+@mixin scroll-bar() {
+    // Firefox
+    scrollbar-color:var(rgba(20, 20, 20, 0.50)) transparent;
+  
+    // Chrome
+    // width
+    ::-webkit-scrollbar {
+      width: $sm;
+      background-color: transparent;
+      border-radius: $lg;
+    }
+  
+    // Track
+    ::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 5px transparent; 
+      border-radius: $lg;
+    }
+    
+    // Handler
+    ::-webkit-scrollbar-thumb {
+      background: var(rgba(20, 20, 20, 0.50)); 
+      border-radius: $lg;
+  
+      &:hover {
+        background: #00000030; 
+      }
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #00000030; 
+    }
+}

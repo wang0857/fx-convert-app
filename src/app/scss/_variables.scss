@@ -1,0 +1,86 @@
+
+// Colors in SCSS variables - Apply to my customized CSS propeties
+$white: #ffffff;
+$dark: #141414;
+$gray: #D9D9D9;
+$primary: #FFFF00;
+$secondary: #FF6600;
+$primary-gradient: linear-gradient(150deg, $primary, $secondary);
+$seconday-gradient: linear-gradient(0deg, $white, rgba(255 255 255 / 0%));
+$background-gradient: 
+                    radial-gradient(
+                        circle at 25% 70%,
+                        rgb(0 255 255 / 40%),
+                        rgb(0 255 255 / 0%) 15%
+                    ),
+                    radial-gradient(
+                        circle at 15% 50%,
+                        rgb(0 255 255 / 90%),
+                        rgb(0 255 255 / 0%) 10%
+                    ),
+                    radial-gradient(
+                        circle at 25% 70%,
+                        rgb(204 0 255 / 100%),
+                        rgb(204 0 255 / 0%) 25%
+                    ),
+                    radial-gradient(
+                        circle at 54% 42%,
+                        rgb(29 78 216 / 50%),
+                        rgb(29 78 216 / 0%) 20%
+                    ),
+                    radial-gradient(
+                        circle at 75% 25%,
+                        rgb(153 0 255 / 100%),
+                        rgb(153 0 255 / 3%) 10%
+                    ),
+                    radial-gradient(
+                        circle at 80% 35%,
+                        rgb(0 255 255 / 100%),
+                        rgb(0 255 255 / 4%) 5%
+                    );
+
+// Colors in CSS root - Apply to the customized syntax of Tailwind CSS
+:root {
+    --white: #ffffff;
+    --dark: #141414;
+    --gray: #D9D9D9;
+    --primary: #FFFF00;
+    --secondary: #FF6600;
+    --background-menu: rgba(75, 75, 75, 0.50);
+    --background-input: rgba(20, 20, 20, 0.75);
+    --background-input-hover: var(--background-menu);
+    --background-panel: rgba(20, 20, 20, 0.35);
+    --background-panel-mobile: rgba(20, 20, 20, 1);
+}
+
+
+// Padding and Margin
+$xs: 5px;
+$sm: 10px;
+$md: 15px;
+$lg: 20px;
+$xlg: 35px;
+$sizes: $xs, $sm, $md, $lg, $xlg;
+
+
+// Transition
+$transition: all .2s ease-in;
+
+
+// Box Shadow
+$box-shadow-black: 0 0 30px 0 rgba(0,0,0,.25);
+$box-shadow-white: 0 0 10px 0 rgba(255,255,255,.75);
+
+
+// Gaps
+
+// @Hack: Use a loop function to declare most gap variables first
+// They will be passed as parameters to the mixin of flex-gap
+
+// Step 1: Create an empty array first
+$gaps: ();
+
+// Step 2. Loop through 0 to 100 and push/append them to the declared array
+@for $i from 0 through 100 {
+    $gaps: append($gaps, #{$i}px);
+}

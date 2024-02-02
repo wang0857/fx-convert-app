@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './variables';
+@import './mixin';
+
+
+body {
+  color: $white;
+  background: $background-gradient;
+  background-color: $dark;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+// @Hack: Dynamically create classes for customizing flex gap using Tailwind CSS syntax
+// The arrays of gap variables are stored in _variables
+// The 'Tailwind CSS-like' classes are stored as a mixin in _mixin
+@each $size in $sizes {
+  @include flex-gap($size)
+}
+
+@each $gap in $gaps {
+  @include flex-gap($gap)
+}
+
+
+// Inputs
+input {
+  position: relative;
+
+  &::placeholder {
+      opacity: 1;
+  }
+
+  &:focus, &:focus-visible {
+      outline: 2px solid $white;
+      z-index: 1;
+  }
+
+  /* Hide spinner */
+  /* Chrome */
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+  }
+
+  /* Firefox */
+  &[type=number] {
+      -moz-appearance: textfield;
+  }
+}
+
+
+// Buttons
+.button {
+  &-primary {   
+    @include button($primary-gradient, $primary-gradient, $dark, $white);
+  }
+
+  &-secondary {
+    @include button($seconday-gradient, $gray, $dark, $white);
+  }
+}
